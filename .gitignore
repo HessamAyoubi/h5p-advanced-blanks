@@ -41,3 +41,5 @@ jspm_packages
 .vscode/launch.json
 .vscode/tasks.json
 .vscode
+# The April package (library + sample); the live one is in releases/
+/h5p-advanced-blanks.h5p
