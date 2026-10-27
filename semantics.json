@@ -433,7 +433,7 @@
         "name": "caseSensitive",
         "importance": "low",
         "type": "boolean",
-        "default": false,
+        "default": true,
         "label": "Case sensitive",
         "description": "If enabled, capitalization that is different from the solution is considered an error.",
         "widget": "showWhen",
@@ -451,7 +451,7 @@
         "importance": "low",
         "name": "autoCheck",
         "type": "boolean",
-        "default": false,
+        "default": true,
         "optional": true
       },
       {
