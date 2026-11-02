@@ -1,0 +1,42 @@
+{
+  "media": { "params": {} },
+  "content": {
+    "task": "<p>Rewrite each sentence so that it starts with a different part. Remember: the conjugated verb always stays in position 2.</p>",
+    "blanksList": [
+      { "correctAnswerText": "trinke ich einen Kaffee in der Küche" },
+      { "correctAnswerText": "fahren wir mit dem Zug nach Hamburg" },
+      { "correctAnswerText": "fahren wir am Wochenende mit dem Zug" },
+      { "correctAnswerText": "spielen die Kinder nach der Schule im Park" },
+      { "correctAnswerText": "trinke" },
+      { "correctAnswerText": "trinke" },
+      { "correctAnswerText": "trinken" },
+      { "correctAnswerText": "trinkt ihr" }
+    ],
+    "blanksText": "<p>1. Ich trinke jeden Morgen einen Kaffee in der Küche.</p>\n<p>- Jeden Morgen _____.</p>\n<p>2. Wir fahren am Wochenende mit dem Zug nach Hamburg.</p>\n<p>- Am Wochenende _____.</p>\n<p>- Nach Hamburg _____.</p>\n<p>- Fußball _____.</p>\n<p>Kurz: Ich _____ jeden Morgen einen Kaffee in der Küche, bevor ich zur Arbeit fahre.</p>\n<figure class=\"table\"><table><tbody><tr><td>ich</td><td>_____</td></tr><tr><td>wir</td><td>_____</td></tr><tr><td>ihr (Frage)</td><td>_____ Kaffee?</td></tr></tbody></table></figure>\n"
+  },
+  "overallFeedback": [ { "from": 0, "to": 100, "feedback": "" } ],
+  "behaviour": {
+    "mode": "typing",
+    "selectAlternatives": "alternatives",
+    "selectAlternativeRestriction": 5,
+    "spellingErrorBehaviour": "mistake",
+    "caseSensitive": true,
+    "autoCheck": true,
+    "enableSolutionsButton": true,
+    "showSolutionsRequiresInput": true,
+    "enableRetry": true,
+    "enableCheckButton": true,
+    "disableImageZooming": false,
+    "confirmCheckDialog": false,
+    "confirmRetryDialog": false
+  },
+  "showSolutions": "Show solution",
+  "tryAgain": "Retry",
+  "checkAnswer": "Check",
+  "notFilledOut": "Please fill in all blanks to view solution",
+  "tipLabel": "Tip",
+  "spellingMistakeWarning": "You've made a spelling mistake: @mistake",
+  "confirmCheck": { "header": "Finish ?", "body": "Are you sure you wish to finish ?", "cancelLabel": "Cancel", "confirmLabel": "Finish" },
+  "confirmRetry": { "header": "Retry ?", "body": "Are you sure you wish to retry ?", "cancelLabel": "Cancel", "confirmLabel": "Confirm" },
+  "scoreBarLabel": "You got :num out of :total points"
+}

@@ -1,0 +1,26 @@
+{
+  "input": [
+    "/* Input field */\n.h5p-advanced-blanks .h5p-text-input {\n  min-width: 80px !important;\n  max-width: 150px !important;\n",
+    "/* Input field: the library sizes it to the longest correct answer, rounded up\n   to the next 10 characters, and from 1.1.2 it grows while the student types.\n   Cap it at its row, never at a fixed width: 150px hid most answers. */\n.h5p-advanced-blanks .h5p-text-input {\n  min-width: 80px !important;\n  max-width: 100% !important;\n"
+  ],
+  "blank": [
+    "/* Blank wrapper */\n.h5p-advanced-blanks .blank {\n  display: inline-block;\n  vertical-align: baseline;\n}",
+    "/* Blank wrapper. max-width: a long field wraps onto its own line and stays\n   inside the row, 0.75em short of it so a following . or ? stays beside it. */\n.h5p-advanced-blanks .blank {\n  display: inline-block;\n  vertical-align: baseline;\n  max-width: calc(100% - 0.75em);\n}"
+  ],
+  "wrapper": [
+    "/* Input wrapper */\n.h5p-advanced-blanks .h5p-input-wrapper {\n  display: inline-block;\n  vertical-align: baseline;\n  margin: 0 4px;\n}",
+    "/* Input wrapper */\n.h5p-advanced-blanks .h5p-input-wrapper {\n  display: inline-block;\n  vertical-align: baseline;\n  margin: 0 4px;\n  max-width: calc(100% - 8px);\n}"
+  ],
+  "feedback-blank": [
+    ".h5p-advanced-blanks .blank.error {\n  max-width: none !important;\n  width: auto !important;\n}",
+    ".h5p-advanced-blanks .blank.error {\n  max-width: calc(100% - 0.75em) !important;\n  width: auto !important;\n}"
+  ],
+  "feedback-input": [
+    ".h5p-advanced-blanks .blank.error .h5p-text-input {\n  min-width: 0 !important;\n  max-width: none !important;\n",
+    ".h5p-advanced-blanks .blank.error .h5p-text-input {\n  min-width: 0 !important;\n  max-width: 100% !important;\n"
+  ],
+  "table-and-narrow": [
+    "/* Table layout (used in some Advanced Fill the Blanks variants) */\n",
+    "/* Inside a table cell max-width: 100% does not hold (the cell grows with its\n   field), so cap fields there by the frame width instead. */\n.h5p-advanced-blanks table .h5p-text-input {\n  max-width: 45vw !important;\n}\n\n/* Narrow frames (phones): a shown or correct answer is read, not typed, so a\n   smaller font lets a long answer fit its row instead of ending in \"...\".\n   Fields being typed in keep their size: under 16px, iOS zooms into them. */\n@media (max-width: 480px) {\n  .h5p-advanced-blanks .blank.showing-solution .h5p-text-input,\n  .h5p-advanced-blanks .blank.correct .h5p-text-input {\n    font-size: 14px !important;\n  }\n}\n\n/* Table layout (used in some Advanced Fill the Blanks variants) */\n"
+  ]
+}
