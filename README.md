@@ -6,22 +6,32 @@
 >
 > | | Upstream | Lingonex |
 > |---|---|---|
-> | Version | 1.1.0 | **1.1.1** |
+> | Version | 1.1.0 | **1.1.2** |
 > | "Case sensitive" default | off | **on** |
 > | "Auto-check" default | off | **on** |
+> | Text field while typing | fixed width, text scrolls | **grows with the text** (1.1.2) |
 >
-> Only the defaults differ: German exercises are case-sensitive (nouns), and the
-> exercise is meant to be checked blank by blank. Existing content keeps whatever it
-> was saved with; the defaults apply to new content.
+> German exercises are case-sensitive (nouns), and the exercise is meant to be checked
+> blank by blank. Existing content keeps the settings it was saved with; the defaults
+> apply to new content. A field starts as wide as the longest correct answer rounded up
+> to the next 10 characters (upstream behaviour) and, from 1.1.2, widens as the student
+> types past that, so they always see what they wrote. Site CSS must not cap its width
+> at a fixed size (`max-width: 100%` keeps it inside its row).
 >
-> **Installed on** academy.lingonex.de and, since 2026-10-27, lingonex.de: both
-> `H5P.AdvancedBlanks` 1.1.1, byte-identical to `releases/H5P.AdvancedBlanks-1.1.1.h5p`.
-> That package also carries **H5P.Question 1.4.8**, which this library needs in exactly
-> version 1.4 and which a fresh site does not have (lingonex.de only had 1.5). Install it
-> through *H5P Content → Libraries → Upload Libraries*.
+> **Installed:** 1.1.1 on academy.lingonex.de and, since 2026-10-27, lingonex.de,
+> byte-identical to `releases/H5P.AdvancedBlanks-1.1.1.h5p`. 1.1.2 is built
+> (`releases/H5P.AdvancedBlanks-1.1.2.h5p`) and not installed yet. Each package also
+> carries **H5P.Question 1.4.8**, which this library needs in exactly version 1.4 and
+> which a fresh site does not have (lingonex.de only had 1.5). Install through
+> *H5P Content → Libraries → Upload Libraries*.
 >
-> `dist/` is a build output and not committed (see `.gitignore`): rebuild with
-> `npm ci` and `npm run build:prod`. The release package holds the `dist/` that is live.
+> **Releasing:** `dist/` is a build output and not committed (see `.gitignore`).
+> Webpack 4 needs the old OpenSSL provider on current Node, and the `cp` in the build
+> script needs a POSIX shell, so on Windows PowerShell:
+> `$env:NODE_OPTIONS = '--openssl-legacy-provider'; npm run build:prod` (the `cp` step
+> only refreshes `dist/ractive.min.js`, which does not change). Then bump
+> `patchVersion` in `library.json` and run
+> `python -I tools/make-release.py releases/<previous>.h5p`.
 
 This is an advanced 'Fill the blanks' content type for h5p. In addition to most of the features of the regular 'Fill the blanks' content type it supports:
 
