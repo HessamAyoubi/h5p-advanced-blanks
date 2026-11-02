@@ -11,6 +11,7 @@ import { Blank } from "../models/blank";
 import { Correctness } from '../models/answer';
 
 import * as RactiveEventsKeys from '../../lib/ractive-events-keys';
+import { fitToLine } from '../helpers/line-fit';
 
 interface ScoreChanged {
   (score: number, maxScore: number): void;
@@ -122,6 +123,41 @@ export class ClozeController {
     var containers = this.createAndAddContainers(root);
     containers.cloze.innerHTML = this.cloze.html;
     this.createRactiveBindings();
+    this.keepFieldsOnTheirLine(containers.cloze);
+  }
+
+  /**
+   * A growing field may use the free space of its own line but must not push
+   * the words beside it onto the next one (see helpers/line-fit). Re-measured
+   * on focus (before a paste can jump), after every keystroke, after every
+   * state change and when the frame is resized.
+   */
+  private keepFieldsOnTheirLine(container: HTMLElement) {
+    this.fitContainer = container;
+    container.addEventListener('focusin', (e: Event) => {
+      if (e.target instanceof HTMLInputElement) {
+        fitToLine(e.target);
+      }
+    });
+    container.addEventListener('input', (e: Event) => {
+      const target = e.target;
+      if (target instanceof HTMLInputElement) {
+        requestAnimationFrame(() => fitToLine(target));
+      }
+    });
+    window.addEventListener('resize', () => this.fitAllToLine());
+  }
+
+  private fitContainer: HTMLElement;
+
+  private fitAllToLine() {
+    if (!this.fitContainer) {
+      return;
+    }
+    const inputs = this.fitContainer.querySelectorAll('input.h5p-text-input');
+    for (let i = 0; i < inputs.length; i++) {
+      fitToLine(inputs[i] as HTMLInputElement);
+    }
   }
 
   checkAll = () => {
@@ -282,6 +318,7 @@ export class ClozeController {
       var blankRactive = this.blankRactives[blank.id];
       blankRactive.set("blank", blank);
     }
+    requestAnimationFrame(() => this.fitAllToLine());
   }
 
   private checkAndNotifyCompleteness = (): boolean => {

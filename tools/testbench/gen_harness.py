@@ -25,7 +25,7 @@ REPO = r'C:\Files\IT Stuff\GitHub\h5p-advanced-blanks'
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, 'harness')
 
-EDITS = json.load(open(os.path.join(HERE, 'css-edits.json'), encoding='utf-8'))
+EDITS = json.load(open(os.path.join(HERE, sys.argv[1] if len(sys.argv) > 1 else 'css-edits.json'), encoding='utf-8'))
 
 
 def get(url):

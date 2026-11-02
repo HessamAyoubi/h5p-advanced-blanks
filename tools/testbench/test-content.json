@@ -10,9 +10,15 @@
       { "correctAnswerText": "trinke" },
       { "correctAnswerText": "trinke" },
       { "correctAnswerText": "trinken" },
-      { "correctAnswerText": "trinkt ihr" }
+      { "correctAnswerText": "trinkt ihr" },
+      { "correctAnswerText": "das Aufräumen" },
+      { "correctAnswerText": "das Einkaufen" },
+      { "correctAnswerText": "das Spazierengehen" },
+      { "correctAnswerText": "die Krankheit" },
+      { "correctAnswerText": "die Kälte" },
+      { "correctAnswerText": "Der Oma" }
     ],
-    "blanksText": "<p>1. Ich trinke jeden Morgen einen Kaffee in der Küche.</p>\n<p>- Jeden Morgen _____.</p>\n<p>2. Wir fahren am Wochenende mit dem Zug nach Hamburg.</p>\n<p>- Am Wochenende _____.</p>\n<p>- Nach Hamburg _____.</p>\n<p>- Fußball _____.</p>\n<p>Kurz: Ich _____ jeden Morgen einen Kaffee in der Küche, bevor ich zur Arbeit fahre.</p>\n<figure class=\"table\"><table><tbody><tr><td>ich</td><td>_____</td></tr><tr><td>wir</td><td>_____</td></tr><tr><td>ihr (Frage)</td><td>_____ Kaffee?</td></tr></tbody></table></figure>\n"
+    "blanksText": "<p>1. Ich trinke jeden Morgen einen Kaffee in der Küche.</p>\n<p>- Jeden Morgen _____.</p>\n<p>2. Wir fahren am Wochenende mit dem Zug nach Hamburg.</p>\n<p>- Am Wochenende _____.</p>\n<p>- Nach Hamburg _____.</p>\n<p>- Fußball _____.</p>\n<p>Kurz: Ich _____ jeden Morgen einen Kaffee in der Küche, bevor ich zur Arbeit fahre.</p>\n<figure class=\"table\"><table><tbody><tr><td>ich</td><td>_____</td></tr><tr><td>wir</td><td>_____</td></tr><tr><td>ihr (Frage)</td><td>_____ Kaffee?</td></tr></tbody></table></figure>\n<ol><li>aufräumen → _____</li><li>einkaufen → _____</li><li>spazieren gehen → _____</li><li>krank sein → _____</li><li>kalt sein → _____</li><li>Die Kinder helfen der Oma.<br>_____ wird geholfen.</li></ol>\n"
   },
   "overallFeedback": [ { "from": 0, "to": 100, "feedback": "" } ],
   "behaviour": {
